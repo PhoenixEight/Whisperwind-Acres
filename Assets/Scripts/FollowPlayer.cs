@@ -5,12 +5,25 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public Transform player;
+    public float smoothing = 5f;
 
-    // Update is called once per frame
-    void Update()
+    private Vector3 offset;
+
+    public float multiplier = 0.1f;
+
+    void Start()
     {
-        //transform.position = player.transform.position + new Vector3(0, 1, 0);
-
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1, 0);
+        offset = transform.position - player.position;
     }
+
+    void FixedUpdate()
+    {
+        transform.position = new Vector3(player.transform.position.x * multiplier, player.transform.position.y * multiplier + 1, 0);
+    }
+
+    /*void FixedUpdate()
+    {
+        Vector3 targetCamPos = player.position + offset;
+        transform.position.x = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+    }*/
 }

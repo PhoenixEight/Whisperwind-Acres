@@ -24,7 +24,7 @@ public class HealthBarScript : MonoBehaviour
         return slider.value;
     }
 
-    private void Awake()
+    /*private void Awake()
     {
         if (HealthBarScript.instance == null)
         {
@@ -32,5 +32,5 @@ public class HealthBarScript : MonoBehaviour
             DontDestroyOnLoad(this);
         }
         else if (instance != null) Destroy(gameObject);
-    }
+    }*/
 }
