@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    private PlayerAnimations playerAnimations;
+    //private PlayerAnimations playerAnimations;
 
-    private PlayerMover playerMover;
+    //private PlayerMover playerMover;
     
     [SerializeField]
     private InputActionReference movement, attack, pointerPosition;
@@ -18,16 +18,16 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        playerAnimations = GetComponentInChildren<playerAnimations>();
+        //playerAnimations = GetComponentInChildren<playerAnimations>();
         weaponParent = GetComponentInChildren<weaponParent>();
-        playerMover = GetComponent<AgentMover>();
-    }
+        //playerMover = GetComponent<AgentMover>();
+    } 
 
     private void AnimateCharacter()
     {
         Vector2 lookDirection = pointerInput - (Vector2)transform.position;
-        playerAnimations.RotateToPointer(lookDirection);
-        playerAnimations.PlayAnimations(movementInput);
+        //playerAnimations.RotateToPointer(lookDirection);
+        //playerAnimations.PlayAnimations(movementInput);
     }
 
     private void OnEnable()
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
         weaponParent.PointerPosition = pointerInput;
         movementInput = movement.action.ReadValue<Vector2>().normalized;
 
-        playerMover.MovementInput = movementInput;
+        //playerMover.MovementInput = movementInput;
 
         if (attack.action.inProgress)
         {
