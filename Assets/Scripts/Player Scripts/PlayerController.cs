@@ -23,15 +23,18 @@ public class PlayerController : MonoBehaviour
         //if movement is not 0, try to move
         if(movementInput != Vector2.zero)
         {
+            Debug.Log("Trying to move");
             bool success = TryMove(movementInput);
 
             if(!success)
             {
                 success = TryMove(new Vector2(movementInput.x, 0));
+                Debug.Log("Moving Horizontally");
 
                 if(!success)
                 {
                     success = TryMove(new Vector2(0, movementInput.y));
+                    Debug.Log("Moving Vertically");
                 }
             }
         }
@@ -44,10 +47,12 @@ public class PlayerController : MonoBehaviour
             if(count==0)
             {
                 rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
+                Debug.Log("Returned True");
                 return true;
             }
             else
             {
+                Debug.Log("Returned False");
                 return false;
             }
 
