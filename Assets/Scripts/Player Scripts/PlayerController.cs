@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
+    public ScytheAttack scytheAttack;
     
     Vector2 movementInput;
     Rigidbody2D rb;
@@ -85,6 +86,14 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetTrigger("scytheAttack");
     }
+
+    public void ScytheAttack()
+    {
+        LockMovement();
+        scytheAttack.AttackLeft();
+
+        scytheAttack.AttackRight();
+    }//1:14:09
 
     public void LockMovement()
     {
