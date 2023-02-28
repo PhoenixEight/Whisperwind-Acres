@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public ScytheAttack scytheAttack;
     
     Vector2 movementInput;
+    SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -48,6 +50,15 @@ public class PlayerController : MonoBehaviour
             } else
             {
                 animator.SetBool("isMoving", false);
+            }
+
+            if(movementInput.x < 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if(movementInput.x > 0)
+            {
+                spriteRenderer.flipX = false;
             }
         }
     }
@@ -90,10 +101,16 @@ public class PlayerController : MonoBehaviour
     public void ScytheAttack()
     {
         LockMovement();
-        scytheAttack.AttackLeft();
-
-        scytheAttack.AttackRight();
-    }//1:14:09
+        if(spriteRenderer.flipX == true)
+        {
+            scytheAttack.AttackLeft();
+        } 
+        else 
+        {
+            scytheAttack.AttackRight();
+        }
+        //UnlockMovement();
+    }
 
     public void LockMovement()
     {
