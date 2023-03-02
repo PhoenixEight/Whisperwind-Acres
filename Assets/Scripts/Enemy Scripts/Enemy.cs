@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float health{
+    public float Health{
         set{
             health = value;
             if(health <= 0)
