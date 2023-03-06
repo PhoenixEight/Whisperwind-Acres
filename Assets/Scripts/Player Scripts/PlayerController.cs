@@ -112,6 +112,12 @@ public class PlayerController : MonoBehaviour
         //UnlockMovement();
     }
 
+    public void EndScytheAttack()
+    {
+        UnlockMovement();
+        scytheAttack.StopAttack();
+    }
+
     public void LockMovement()
     {
         canMove = false;
