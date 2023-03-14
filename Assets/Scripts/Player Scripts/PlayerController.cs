@@ -5,17 +5,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 1f;
-    public float collisionOffset = 0.05f;
+    public float moveSpeed = 150f;
+    public float maxSpeed = 8f;
+    public float idleFriction = 0.9f;
+    public float moveMultiplier = 1f;
+
     public ContactFilter2D movementFilter;
     public ScytheAttack scytheAttack;
-    
-    Vector2 movementInput;
-    SpriteRenderer spriteRenderer;
+
     Rigidbody2D rb;
     Animator animator;
-    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-
+    SpriteRenderer spriteRenderer;
+    Vector2 moveInput = Vector2.zero;
+    
+    bool isMoving = false;
     bool canMove = true;
 
     void Start()
@@ -25,72 +28,52 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        if(canMove)
+        if(canMove == true && moveInput != Vector2.zero)
         {
-            //if movement is not 0, try to move
-            if(movementInput != Vector2.zero)
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (moveInput * moveSpeed * Time.deltaTime * moveMultiplier), maxSpeed * moveMultiplier);
+
+            if(moveInput.x > 0)
             {
-                Debug.Log("Trying to move");
-                bool success = TryMove(movementInput);
-
-                if(!success)
-                {
-                    success = TryMove(new Vector2(movementInput.x, 0));
-                    Debug.Log("Moving Horizontally");
-
-                    if(!success)
-                    {
-                        success = TryMove(new Vector2(0, movementInput.y));
-                        Debug.Log("Moving Vertically");
-                    }
-                }
-                animator.SetBool("isMoving", success);
-            } else
-            {
-                animator.SetBool("isMoving", false);
-            }
-
-            if(movementInput.x < 0)
+                spriteRenderer.flipX = false;
+            } 
+            else if(moveInput.x < 0)
             {
                 spriteRenderer.flipX = true;
             }
-            else if(movementInput.x > 0)
-            {
-                spriteRenderer.flipX = false;
-            }
-        }
-    }
 
-    private bool TryMove(Vector2 direction)
-    {
-        if(direction != Vector2.zero)
-        {
-            int count = rb.Cast(direction, movementFilter, castCollisions, moveSpeed * Time.fixedDeltaTime /*+ collisionOffset*/);
-
-            if(count==0)
-            {
-                rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-                Debug.Log("Returned True");
-                return true;
-            }
-            else
-            {
-                Debug.Log("Returned False");
-                return false;
-            }
+            isMoving = true;
         }
         else
         {
-            Debug.Log("Returned False");
-            return false;
+            //rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
+
+            isMoving = false;
         }
+
+        UpdateAnimatorParameters();
     }
 
-    void OnMove(InputValue movementValue)
+    void OnMove(InputValue value)
     {
-        movementInput = movementValue.Get<Vector2>();
+        moveInput = value.Get<Vector2>();
+    }
+
+    void OnSprint()
+    {
+        moveMultiplier = 3;
+    }
+
+    void OnSprintStop()
+    {
+        moveMultiplier = 1;
+    }
+
+    void UpdateAnimatorParameters()
+    {
+        animator.SetFloat("moveX", moveInput.x);
+        animator.SetFloat("moveY", moveInput.y);
     }
 
     void OnFire()
@@ -109,7 +92,6 @@ public class PlayerController : MonoBehaviour
         {
             scytheAttack.AttackRight();
         }
-        //UnlockMovement();
     }
 
     public void EndScytheAttack()
