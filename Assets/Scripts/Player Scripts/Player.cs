@@ -11,6 +11,19 @@ public class Player : MonoBehaviour
         inventory = new Inventory(21);
     }
 
+    public void DropItem(Item item)
+    {
+        Vector2 spawnLocation = transform.position;
+
+        Vector2 spawnOffset = Random.insideUnitCircle * 2.5f;
+
+        Item droppedItem = Instantiate(item, spawnLocation + spawnOffset, 
+        Quaternion.identity);
+
+        droppedItem.rb2d.AddForce(spawnOffset * .5f, ForceMode2D.Impulse);
+
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
