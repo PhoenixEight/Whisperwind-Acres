@@ -22,14 +22,14 @@ public class Inventory_UI : MonoBehaviour
     public void ToggleInventory(){
         if(!inventoryPanel.activeSelf){
             inventoryPanel.SetActive(true);
-            Setup();
+            Refresh();
         }
         else{
             inventoryPanel.SetActive(false);
         }
     }
     //sets up the visuals for collecting items
-    void Setup()
+    void Refresh()
     {
         if(slots.Count == player.inventory.slots.Count)
         {
