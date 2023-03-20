@@ -13,9 +13,12 @@ public class PlayerController : MonoBehaviour
     public ContactFilter2D movementFilter;
     public ScytheAttack scytheAttack;
 
+    public GameObject scytheHitbox;
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
+
+    Collider2D scytheCollider;
     Vector2 moveInput = Vector2.zero;
     
     bool isMoving = false;
@@ -26,6 +29,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        scytheCollider = scytheHitbox.GetComponent<Collider2D>();
     }
 
     void FixedUpdate()

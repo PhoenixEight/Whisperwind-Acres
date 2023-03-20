@@ -4,35 +4,50 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-Animator animator;
+    Animator animator;
+
+    bool isAlive = true;
 
     public float Health{
         set{
-            health = value;
-            if(health <= 0)
+            if(value < _health)
+            {
+                animator.SetTrigger("damaged");
+            }
+
+            _health = value;
+            print(value);
+
+            if(_health <= 0)
             {
                 Defeated();
             }
         }
         get{
-            return health;
+            return _health;
         }
     }
 
-    public float health = 10;
+    public float _health = 10;
 
     public void Start()
     {
         animator = GetComponent<Animator>();
+        animator.SetBool("isAlive", isAlive);
+    }
+
+    void OnHit(float damage)
+    {
+        Health -= damage;
     }
 
     public void Defeated()
     {
-        animator.SetTrigger("Defeated");
+        animator.SetBool("isAlive", false);
     }
 
     public void RemoveEnemy()
     {
         Destroy(gameObject);
     }
-}//1:20:55
+}
