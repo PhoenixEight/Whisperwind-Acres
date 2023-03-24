@@ -24,6 +24,15 @@ public class Player : MonoBehaviour
 
     }
 
+    public void DropItem(Item item, int numToDrop)
+    {
+        for(int i = 0; i < numToDrop; i++)
+        {
+            DropItem(item);
+        }
+
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
