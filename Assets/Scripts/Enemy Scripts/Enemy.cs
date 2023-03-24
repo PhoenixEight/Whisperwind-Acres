@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
 
     void OnHit(float damage)
     {
+        Debug.Log("Plant hit for " + damage);
         Health -= damage;
     }
 
