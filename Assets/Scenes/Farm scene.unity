@@ -7645,6 +7645,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 6
+  inventory:
+    slots: []
   itemIcon: {fileID: 1231620546}
   quantityText: {fileID: 1147170978}
 --- !u!224 &248221005 stripped
@@ -7692,6 +7694,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 9
+  inventory:
+    slots: []
   itemIcon: {fileID: 368263051}
   quantityText: {fileID: 453237833}
 --- !u!224 &269963492 stripped
@@ -7717,6 +7721,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 16
+  inventory:
+    slots: []
   itemIcon: {fileID: 2100560065}
   quantityText: {fileID: 1708207903}
 --- !u!224 &301033947 stripped
@@ -7765,8 +7771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc07e4c31a089d4eaa78443ccb8702e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scytheCollider: {fileID: 0}
-  damage: 3
 --- !u!61 &332154816
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8459,6 +8463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 1
+  inventory:
+    slots: []
   itemIcon: {fileID: 609111412}
   quantityText: {fileID: 1116670492}
 --- !u!224 &514544691 stripped
@@ -9693,6 +9699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 5
+  inventory:
+    slots: []
   itemIcon: {fileID: 1253457532}
   quantityText: {fileID: 413046907}
 --- !u!224 &638001695 stripped
@@ -10192,6 +10200,7 @@ GameObject:
   - component: {fileID: 706071283}
   - component: {fileID: 706071282}
   - component: {fileID: 706071281}
+  - component: {fileID: 706071289}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10211,8 +10220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98b83e0a25aaab44b4c8cf489c23352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory:
-    slots: []
+  inventory: {fileID: 0}
 --- !u!95 &706071282
 Animator:
   serializedVersion: 5
@@ -10310,8 +10318,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  scytheAttack: {fileID: 332154815}
-  scytheHitbox: {fileID: 0}
 --- !u!114 &706071286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10410,6 +10416,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &706071289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706071280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28d03f29af2c3f49bd7773ab8bf221c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backpack:
+    slots: []
+  backpackSlotCount: 21
+  toolbar:
+    slots: []
+  toolbarSlotCount: 1
 --- !u!224 &753729101 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2231702907750728096, guid: 28680d17434503344b1988ec2b8dbd0f, type: 3}
@@ -10420,7 +10444,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3717376902498824228, guid: 28680d17434503344b1988ec2b8dbd0f, type: 3}
   m_PrefabInstance: {fileID: 952795504}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1187014832}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce8717fcb8f1d3940a31a2c7e6a951e8, type: 3}
@@ -11191,6 +11215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 10
+  inventory:
+    slots: []
   itemIcon: {fileID: 1152402420}
   quantityText: {fileID: 586857725}
 --- !u!224 &861543113 stripped
@@ -11465,6 +11491,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 20
+  inventory:
+    slots: []
   itemIcon: {fileID: 69791092}
   quantityText: {fileID: 1435313009}
 --- !u!224 &948095017 stripped
@@ -11858,6 +11886,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 8
+  inventory:
+    slots: []
   itemIcon: {fileID: 995874852}
   quantityText: {fileID: 252802760}
 --- !u!224 &1064838853 stripped
@@ -11931,6 +11961,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 18
+  inventory:
+    slots: []
   itemIcon: {fileID: 1198407540}
   quantityText: {fileID: 267477344}
 --- !u!224 &1125209436 stripped
@@ -12123,6 +12155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 13
+  inventory:
+    slots: []
   itemIcon: {fileID: 1878916481}
   quantityText: {fileID: 225742213}
 --- !u!224 &1179407786 stripped
@@ -12130,6 +12164,88 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2231702907750728096, guid: f6c21c060a6acb14380fd2f18d4a53a2, type: 3}
   m_PrefabInstance: {fileID: 367897616}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1187014832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2231702907750728097, guid: 28680d17434503344b1988ec2b8dbd0f, type: 3}
+  m_PrefabInstance: {fileID: 952795504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1187014835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187014832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1438207094}
+          m_TargetAssemblyTypeName: Inventory_UI, Assembly-CSharp
+          m_MethodName: SlotBeginDrag
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 753729102}
+            m_ObjectArgumentAssemblyTypeName: Slot_UI, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1438207094}
+          m_TargetAssemblyTypeName: Inventory_UI, Assembly-CSharp
+          m_MethodName: SlotDrag
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1438207094}
+          m_TargetAssemblyTypeName: Inventory_UI, Assembly-CSharp
+          m_MethodName: SlotEndDrag
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 6
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1438207094}
+          m_TargetAssemblyTypeName: Inventory_UI, Assembly-CSharp
+          m_MethodName: SlotDrop
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 753729102}
+            m_ObjectArgumentAssemblyTypeName: Slot_UI, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1190028907
 GameObject:
   m_ObjectHideFlags: 0
@@ -12142,6 +12258,7 @@ GameObject:
   - component: {fileID: 1190028909}
   - component: {fileID: 1190028908}
   - component: {fileID: 1190028911}
+  - component: {fileID: 1190028912}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -12178,6 +12295,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemManager: {fileID: 0}
   tileManager: {fileID: 0}
+  uiManager: {fileID: 0}
+  player: {fileID: 0}
 --- !u!4 &1190028910
 Transform:
   m_ObjectHideFlags: 0
@@ -12207,6 +12326,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 2534270276797616057, guid: 072dec147766cd44287cb6a75988b009, type: 3}
+--- !u!114 &1190028912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190028907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2594cfb0cd98ab94dae26f59886c2df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 1350982101}
+  inventoryUIs:
+  - {fileID: 1384401383}
+  - {fileID: 1438207094}
 --- !u!114 &1198407540 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2231702907287392761, guid: f6c21c060a6acb14380fd2f18d4a53a2, type: 3}
@@ -12340,6 +12475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 17
+  inventory:
+    slots: []
   itemIcon: {fileID: 445141531}
   quantityText: {fileID: 2062895520}
 --- !u!224 &1247889769 stripped
@@ -12387,6 +12524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 19
+  inventory:
+    slots: []
   itemIcon: {fileID: 1900425543}
   quantityText: {fileID: 303378950}
 --- !u!224 &1257807989 stripped
@@ -12697,6 +12836,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 12
+  inventory:
+    slots: []
   itemIcon: {fileID: 1142433050}
   quantityText: {fileID: 2140050956}
 --- !u!224 &1336790355 stripped
@@ -13309,8 +13450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a28929091179043baab99ef9ae90eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 1350982101}
-  player: {fileID: 706071281}
+  inventoryName: Backpack
   slots:
   - {fileID: 2231702907223514057}
   - {fileID: 514544690}
@@ -13366,6 +13506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1438207092}
   - component: {fileID: 1438207093}
+  - component: {fileID: 1438207094}
   m_Layer: 5
   m_Name: ToolSlot
   m_TagString: Untagged
@@ -13409,6 +13550,22 @@ MonoBehaviour:
   toolbarSlots:
   - {fileID: 753729102}
   toolBarSlot: {fileID: 1987988944}
+--- !u!114 &1438207094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438207091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a28929091179043baab99ef9ae90eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryName: Toolbar
+  slots:
+  - {fileID: 753729102}
+  canvas: {fileID: 0}
 --- !u!1001 &1442513999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13665,6 +13822,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 11
+  inventory:
+    slots: []
   itemIcon: {fileID: 1541640083}
   quantityText: {fileID: 1905150830}
 --- !u!224 &1488282276 stripped
@@ -13939,6 +14098,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 7
+  inventory:
+    slots: []
   itemIcon: {fileID: 859382743}
   quantityText: {fileID: 836490498}
 --- !u!224 &1545968497 stripped
@@ -14337,6 +14498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 15
+  inventory:
+    slots: []
   itemIcon: {fileID: 177541345}
   quantityText: {fileID: 44904136}
 --- !u!224 &1638259807 stripped
@@ -14362,6 +14525,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 2
+  inventory:
+    slots: []
   itemIcon: {fileID: 556757625}
   quantityText: {fileID: 1232167633}
 --- !u!224 &1661662051 stripped
@@ -14387,6 +14552,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 4
+  inventory:
+    slots: []
   itemIcon: {fileID: 1837662265}
   quantityText: {fileID: 990268712}
 --- !u!224 &1684969431 stripped
@@ -15328,6 +15495,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 3
+  inventory:
+    slots: []
   itemIcon: {fileID: 1403748897}
   quantityText: {fileID: 447120505}
 --- !u!224 &2097170777 stripped
@@ -15613,6 +15782,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 14
+  inventory:
+    slots: []
   itemIcon: {fileID: 931960358}
   quantityText: {fileID: 1248875201}
 --- !u!224 &2141336642 stripped
@@ -15734,6 +15905,10 @@ PrefabInstance:
     - target: {fileID: 2231702907750728097, guid: f6c21c060a6acb14380fd2f18d4a53a2, type: 3}
       propertyPath: m_Name
       value: Slot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2231702907840190282, guid: f6c21c060a6acb14380fd2f18d4a53a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2557099614511503357, guid: f6c21c060a6acb14380fd2f18d4a53a2, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
@@ -15871,6 +16046,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 0
+  inventory:
+    slots: []
   itemIcon: {fileID: 789998783}
   quantityText: {fileID: 1873072890}
 --- !u!1001 &3942088088709775827
