@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScytheHitbox : MonoBehaviour
 {
     public float scytheDamage = 1f;
+    public float knockbackForce = 500f;
     public Collider2D scytheCollider;
     //public Vector2 attackOffset;
     public Vector3 faceRight = new Vector3(1, 0, 0);
@@ -20,7 +21,12 @@ public class ScytheHitbox : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        col.SendMessage("OnHit", scytheDamage);
+        Vector3 parentPosition = gameObject.GetComponentInParent<Transform>().position;
+
+        Vector2 direction = (Vector2) (parentPosition - collider.gameObject.transform.position).normalized;
+        Vector2 knockback = direction * knockbackForce;
+
+        col.SendMessage("OnHit", scytheDamage, knockback);
     }
 
     void IsFacingRight(bool isFacingRight)
