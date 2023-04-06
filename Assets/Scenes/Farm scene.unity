@@ -12339,6 +12339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 1350982101}
+  toolbarPanel: {fileID: 1987988944}
   inventoryUIs:
   - {fileID: 1384401383}
   - {fileID: 1438207094}

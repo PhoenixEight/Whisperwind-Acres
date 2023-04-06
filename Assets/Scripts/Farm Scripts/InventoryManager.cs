@@ -33,6 +33,15 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void RemoveSeed(string inventoryName)
+    {
+        if(inventoryByName.ContainsKey(inventoryName))
+        {
+            inventoryByName[inventoryName].RemoveSeed();
+        }
+    }
+
+
     public Inventory GetInventoryByName(string inventoryName)
     {
         if(inventoryByName.ContainsKey(inventoryName))
@@ -42,5 +51,7 @@ public class InventoryManager : MonoBehaviour
 
         return null;
     }
+
+
 
 }

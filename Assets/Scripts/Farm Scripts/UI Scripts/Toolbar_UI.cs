@@ -14,21 +14,7 @@ public class Toolbar_UI : MonoBehaviour
         selectedSlot = toolbarSlots[0];
         //SelectSlot(0);
     }
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Tab)){
-            ToggleToolSlot();
-        }
-    }
-    //function for toggling the toolbar visual
-    public void ToggleToolSlot(){
-        if(!toolBarSlot.activeSelf){
-            toolBarSlot.SetActive(true);
-        }
-        else{
-            toolBarSlot.SetActive(false);
-        }
-    }
+    
 /*
     private void Update()
     {

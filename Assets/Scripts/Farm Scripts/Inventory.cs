@@ -11,6 +11,9 @@ public class Inventory
         public int count; //keeps track of number of items in that slot
         public int maxAllowed;
 
+        //experiment:
+        public bool seedExists = false;
+
         public Sprite icon;
 
         public Slot(){
@@ -122,4 +125,17 @@ public class Inventory
             }
         }
     }
+
+public void RemoveSeed()
+    {
+        foreach(Slot slot in slots)
+        {
+            if(slot.itemName == "Common Seeds"){
+                slot.RemoveItem();
+                //Debug.Log("In slot: " + slot + " There is item name" + slot.itemName);
+            }
+        }
+    }
+
+
 }

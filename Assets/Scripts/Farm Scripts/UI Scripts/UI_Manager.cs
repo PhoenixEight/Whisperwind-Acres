@@ -8,6 +8,7 @@ public class UI_Manager : MonoBehaviour
     public Dictionary<string, Inventory_UI> inventoryUIByName = new Dictionary<string, Inventory_UI>();
 
     public GameObject inventoryPanel;
+    public GameObject toolbarPanel;
 
     public List<Inventory_UI> inventoryUIs;
 
@@ -39,10 +40,15 @@ public class UI_Manager : MonoBehaviour
     public void ToggleInventoryUI(){
         if(!inventoryPanel.activeSelf){
             inventoryPanel.SetActive(true);
+            toolbarPanel.SetActive(true);
             RefreshInventoryUI("Backpack");
+            //added by me to refresh the toolbar:
+            RefreshInventoryUI("Toolbar");
+
         }
         else{
             inventoryPanel.SetActive(false);
+            toolbarPanel.SetActive(false);
             
         }
     }
