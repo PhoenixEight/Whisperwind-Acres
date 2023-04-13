@@ -43,6 +43,9 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         Debug.Log("Plant hit for " + damage);
         Health -= damage;
+
+        rb.AddForce(knockback);
+        Debug.Log("Force: " + knockback);
     }
 
     public void OnHit(float damage)
