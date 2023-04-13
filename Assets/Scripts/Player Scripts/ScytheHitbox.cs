@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScytheHitbox : MonoBehaviour
 {
     public float scytheDamage = 1f;
-    public float knockbackForce = 500f;
+    public float knockbackForce = 0.5f;
     public Collider2D scytheCollider;
     //public Vector2 attackOffset;
     public Vector3 faceRight = new Vector3(1, 0, 0);
@@ -19,14 +19,24 @@ public class ScytheHitbox : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        Vector3 parentPosition = gameObject.GetComponentInParent<Transform>().position;
+        IDamageable  damageableObject = collider.GetComponent<IDamageable>();
 
-        Vector2 direction = (Vector2) (parentPosition - collider.gameObject.transform.position).normalized;
-        Vector2 knockback = direction * knockbackForce;
+        if(damageableObject != null)
+        {
+            Vector3 parentPosition = gameObject.GetComponentInParent<Transform>().position;
 
-        col.SendMessage("OnHit", scytheDamage, knockback);
+            Vector2 direction = (Vector2) (collider.gameObject.transform.position - parentPosition).normalized;
+            Vector2 knockback = direction * knockbackForce;
+
+            //collider.SendMessage("OnHit", scytheDamage, knockback);
+            damageableObject.OnHit(scytheDamage, knockback);
+        }
+        else
+        {
+            Debug.LogWarning("Collider does not implement IDamageable");
+        }
     }
 
     void IsFacingRight(bool isFacingRight)
