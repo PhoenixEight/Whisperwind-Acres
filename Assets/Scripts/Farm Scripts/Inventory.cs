@@ -12,7 +12,7 @@ public class Inventory
         public int maxAllowed;
 
         //experiment:
-        public bool seedExists = false;
+        public static bool seedExists;
 
         public Sprite icon;
 
@@ -20,6 +20,7 @@ public class Inventory
             itemName = "";
             count = 0;
             maxAllowed = 1;
+            
         }
 
         public bool IsEmpty
@@ -137,5 +138,17 @@ public void RemoveSeed()
         }
     }
 
-
+public void CheckSeed()
+{
+    foreach(Slot slot in slots)
+        {
+            if(slot.itemName == "Common Seeds"){
+                Slot.seedExists = true;
+                //Debug.Log("In slot: " + slot + " There is item name" + slot.itemName);
+            }
+            else
+              Slot.seedExists = false;
+        }
 }
+
+}//end inventory.cs

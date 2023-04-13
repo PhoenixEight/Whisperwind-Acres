@@ -41,6 +41,13 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void CheckSeed(string inventoryName)
+    {
+        if(inventoryByName.ContainsKey(inventoryName))
+        {
+            inventoryByName[inventoryName].CheckSeed();
+        }
+    }
 
     public Inventory GetInventoryByName(string inventoryName)
     {

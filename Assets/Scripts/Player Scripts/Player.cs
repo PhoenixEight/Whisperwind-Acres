@@ -7,9 +7,12 @@ public class Player : MonoBehaviour
 {
     public InventoryManager inventory;
     
+    
+    
 
     private void Awake(){
         inventory = GetComponent<InventoryManager>();
+        
     }
 
     public void DropItem(Item item)
@@ -42,11 +45,15 @@ public class Player : MonoBehaviour
             //original
             if(GameManager.instance.tileManager.IsInteractable(position))
             {
-                //item is called "Common Seeds"
+                inventory.CheckSeed("Toolbar");
+                
+                if(Inventory.Slot.seedExists == true)
+                {
+                    //item is called "Common Seeds"
                         inventory.RemoveSeed("Toolbar");
                         Debug.Log("Tile is interactable");
                         GameManager.instance.tileManager.SetInteracted(position);
-                        
+                }
                         
             }
         }

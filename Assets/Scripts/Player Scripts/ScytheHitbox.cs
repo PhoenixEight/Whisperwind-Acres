@@ -23,7 +23,7 @@ public class ScytheHitbox : MonoBehaviour
     {
         Vector3 parentPosition = gameObject.GetComponentInParent<Transform>().position;
 
-        Vector2 direction = (Vector2) (parentPosition - collider.gameObject.transform.position).normalized;
+        Vector2 direction = (Vector2) (parentPosition - GetComponent<Collider>().gameObject.transform.position).normalized;
         Vector2 knockback = direction * knockbackForce;
 
         col.SendMessage("OnHit", scytheDamage, knockback);
