@@ -29,7 +29,15 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
+    public bool Targetable { get { return _targetable; }
+    set {
+        _targetable = value;
+
+        rb.simulated = value;
+    } }
+
     public float _health = 10;
+    public bool _targetable = true;
 
     public void Start()
     {
