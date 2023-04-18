@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    public float damage = 1;
     Animator animator;
     Rigidbody2D rb;
+    Collider2D physicsCollider;
 
     bool isAlive = true;
 
@@ -22,6 +24,7 @@ public class Enemy : MonoBehaviour, IDamageable
             if(_health <= 0)
             {
                 Defeated();
+                Targetable = false;
             }
         }
         get{
@@ -33,7 +36,8 @@ public class Enemy : MonoBehaviour, IDamageable
     set {
         _targetable = value;
 
-        rb.simulated = value;
+        //rb.simulated = value;
+        physicsCollider.enabled = value;
     } }
 
     public float _health = 10;
@@ -45,6 +49,7 @@ public class Enemy : MonoBehaviour, IDamageable
         animator.SetBool("isAlive", isAlive);
 
         rb = GetComponent<Rigidbody2D>();
+        physicsCollider = GetComponent<Collider2D>();
     }
 
     public void OnHit(float damage, Vector2 knockback)
@@ -70,5 +75,20 @@ public class Enemy : MonoBehaviour, IDamageable
     public void RemoveEnemy()
     {
         Destroy(gameObject);
+    }
+
+    public void OnObjectDestroyed()
+    {
+        Destroy(gameObject);
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        IDamageable damageable = col.collider.GetComponent<IDamageable>();
+
+        if(damageable != null)
+        {
+            damageable.OnHit(damage);
+        }
     }
 }
