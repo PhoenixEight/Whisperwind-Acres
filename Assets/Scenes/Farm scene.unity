@@ -10271,6 +10271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+  plantCounter: 0
+  plantReady: 0
 --- !u!95 &706071282
 Animator:
   serializedVersion: 5
@@ -12369,6 +12371,10 @@ MonoBehaviour:
   interactableMap: {fileID: 352820063}
   hiddenInteractableTile: {fileID: 11400000, guid: 9d8f50a6115d736448bb5185753afc9e, type: 2}
   interactedTile: {fileID: 11400000, guid: cde4647f9916e914383d2c429457fc80, type: 2}
+  fullGrownTile: {fileID: 0}
+  plotTile: {fileID: 11400000, guid: 17a98c3409a2dd34c8650380a401c28d, type: 2}
+  plantCounter: {fileID: 0}
+  plantReady: {fileID: 0}
 --- !u!114 &1190028909
 MonoBehaviour:
   m_ObjectHideFlags: 0

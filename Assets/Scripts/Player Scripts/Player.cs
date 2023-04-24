@@ -6,10 +6,9 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     public InventoryManager inventory;
+    public int plantCounter;
+    public bool plantReady = true;
     
-    
-    
-
     private void Awake(){
         inventory = GetComponent<InventoryManager>();
         
@@ -53,6 +52,10 @@ public class Player : MonoBehaviour
                         inventory.RemoveSeed("Toolbar");
                         Debug.Log("Tile is interactable");
                         GameManager.instance.tileManager.SetInteracted(position);
+                }
+                
+                if(plantReady == true){
+                    GameManager.instance.tileManager.PluckPlant(position);
                 }
                         
             }
