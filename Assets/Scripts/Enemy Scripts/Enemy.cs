@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     bool isAlive = true;
 
+
     public float Health{
         set{
             if(value < _health)
@@ -70,6 +71,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public void Defeated()
     {
         animator.SetBool("isAlive", false);
+
     }
 
     public void RemoveEnemy()
