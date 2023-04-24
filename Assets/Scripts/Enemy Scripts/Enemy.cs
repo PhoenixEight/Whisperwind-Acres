@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
@@ -11,6 +12,11 @@ public class Enemy : MonoBehaviour, IDamageable
 
     bool isAlive = true;
 
+    const float m_dropChance = 1f / 2f;  // Set odds here - e.g. 1 in 10 chance.
+
+    public GameObject collectable;
+
+    //public Transform target;
 
     public float Health{
         set{
@@ -53,6 +59,11 @@ public class Enemy : MonoBehaviour, IDamageable
         physicsCollider = GetComponent<Collider2D>();
     }
 
+    public void Update()
+    {
+        //target = transform.position;
+    }
+
     public void OnHit(float damage, Vector2 knockback)
     {
         Debug.Log("Plant hit for " + damage);
@@ -72,6 +83,11 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         animator.SetBool("isAlive", false);
 
+        if(Random.Range(0f, 1f) <= m_dropChance )
+        {
+            //Instantiate(collectable, target.position, transform.rotation);
+            //Debug.Log("Item Dropped");
+        }
     }
 
     public void RemoveEnemy()
