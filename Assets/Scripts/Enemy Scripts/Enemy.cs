@@ -82,6 +82,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public void Defeated()
     {
         animator.SetBool("isAlive", false);
+
         if(Random.Range(0f, 1f) <= m_dropChance )
         {
             Instantiate(collectable, target.position, transform.rotation);

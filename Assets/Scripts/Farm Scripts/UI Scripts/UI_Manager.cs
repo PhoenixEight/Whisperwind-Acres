@@ -19,6 +19,7 @@ public class UI_Manager : MonoBehaviour
     private void Awake()
     {
         Initialize();
+        ToggleInventoryUI();
     }
 
     private void Update()
