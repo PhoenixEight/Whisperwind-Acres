@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Farm scene");
+        SceneManager.LoadScene("Fart scene");
         
         DataPersistenceManager.instance.NewGame();
     }
