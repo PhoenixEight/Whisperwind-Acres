@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class Portal : MonoBehaviour
 {
 
-    public string Level1;
+    public string Level_Name;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Player")
          {
-        SceneManager.LoadScene(Level1,LoadSceneMode.Single);
+        SceneManager.LoadScene(Level_Name,LoadSceneMode.Single);
 
          }
     }    
