@@ -12,11 +12,11 @@ public class Enemy : MonoBehaviour, IDamageable
 
     bool isAlive = true;
 
-    const float m_dropChance = 1f / 2f;  // Set odds here - e.g. 1 in 10 chance.
+    const float m_dropChance = 1f / 6f;  // Set odds here (1/X)
 
     public GameObject collectable;
 
-    //public Transform target;
+    public Transform target;
 
     public float Health{
         set{
@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Update()
     {
-        //target = transform.position;
+        target.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
     public void OnHit(float damage, Vector2 knockback)
@@ -85,7 +85,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
         if(Random.Range(0f, 1f) <= m_dropChance )
         {
-            //Instantiate(collectable, target.position, transform.rotation);
+            Instantiate(collectable, target.position, transform.rotation);
             //Debug.Log("Item Dropped");
         }
     }
