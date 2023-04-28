@@ -64,10 +64,6 @@ public void PluckPlant(Vector3Int position)
             interactableMap.SetTile(position, hiddenInteractableTile);
             interactableMap.SetTile(position, plotTile);
             //plantCounter = 0;
-        
         }
-        
     }
-
-
 }
