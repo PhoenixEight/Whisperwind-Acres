@@ -6,9 +6,12 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     public InventoryManager inventory;
-    public int plantCounter;
-    public bool plantReady = true;
-    
+
+    public Vector3Int plantPosition;
+
+    public static int plantCounter = 0;
+    public static bool plantReady = true;
+
     private void Awake(){
         inventory = GetComponent<InventoryManager>();
         
@@ -36,26 +39,42 @@ public class Player : MonoBehaviour
 
     }
 
+
+    
+
     private void Update()
     {
+        if(plantCounter == 3)
+        {
+            plantReady = true;
+            GameManager.instance.tileManager.SetPlantFullGrown(plantPosition);
+        }
+
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Vector3Int position = new Vector3Int((int)transform.position.x,(int)transform.position.y, 0);
+            
             //original
             if(GameManager.instance.tileManager.IsInteractable(position))
             {
-                inventory.CheckSeed("Toolbar");
+                if(GameManager.instance.tileManager.IsPluckable(position))
+                { 
+                        GameManager.instance.tileManager.PluckPlant(position);
+                        plantCounter = 0;
                 
-                if(Inventory.Slot.seedExists == true)
-                {
-                    //item is called "Common Seeds"
+                }
+                else{
+
+                    inventory.CheckSeed("Toolbar");
+                    if(Inventory.Slot.seedExists == true)
+                    {
+                        //item is called "Common Seeds"
                         inventory.RemoveSeed("Toolbar");
                         Debug.Log("Tile is interactable");
-                        GameManager.instance.tileManager.SetInteracted(position);
-                }
-                
-                if(plantReady == true){
-                    GameManager.instance.tileManager.PluckPlant(position);
+                        GameManager.instance.tileManager.PlantSeed(position);
+                        plantPosition = new Vector3Int((int)transform.position.x,(int)transform.position.y, 0);
+
+                    }
                 }
                         
             }

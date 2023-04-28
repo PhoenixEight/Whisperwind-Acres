@@ -5,14 +5,17 @@ using UnityEngine.Tilemaps;
 public class TileManager : MonoBehaviour
 {
     [SerializeField] private Tilemap interactableMap;
+    [SerializeField] private Tilemap Ground;
 
     [SerializeField] private Tile hiddenInteractableTile;
     [SerializeField] private Tile interactedTile;
-    [SerializeField] private Tile fullGrownTile;
+    //[SerializeField] private Tile fullGrownTile;
     [SerializeField] private Tile plotTile;
+    [SerializeField] private Tile plantReadyTile;
 
-    public Player plantCounter;
-    public Player plantReady;
+    //[SerializeField] private Player plantCounter;
+    //Player.GlobalPlant plantCounter;
+    //Player.GlobalPlant plantReady;
 
     void Start()
     {
@@ -27,7 +30,7 @@ public class TileManager : MonoBehaviour
             
         }
     }
-
+//Booleans ------------------------------------------------------------------------
     public bool IsInteractable(Vector3Int position)
     {
         TileBase tile = interactableMap.GetTile(position);
@@ -43,27 +46,46 @@ public class TileManager : MonoBehaviour
         return false;
     }
 
-    public void SetInteracted(Vector3Int position)
+    public bool IsPluckable(Vector3Int position)
     {
-        if(plantReady == true)
+        TileBase tile = Ground.GetTile(position);
+
+        if(tile != null)
         {
-            interactableMap.SetTile(position, plotTile);
-            //plantCounter = 0;
+            if(tile.name == "plant_ready")
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+//tile setting --------------------------------------------------------------------------------------
+
+    public void PlantSeed(Vector3Int position)
+    {
+        Ground.SetTile(position, interactedTile);
+        interactableMap.SetTile(position, hiddenInteractableTile);
+
         
-        }
-        else
-        {
-            interactableMap.SetTile(position, interactedTile);
-        }
+       
     }
 
 public void PluckPlant(Vector3Int position)
     {
-        if(plantReady == true)
-        {
+            Player.plantCounter = 0;
             interactableMap.SetTile(position, hiddenInteractableTile);
-            interactableMap.SetTile(position, plotTile);
-            //plantCounter = 0;
+            Ground.SetTile(position, plotTile);
+            
+    }
+
+
+    public void SetPlantFullGrown(Vector3Int position)
+    {
+        if(Player.plantReady == true)
+        {
+            Ground.SetTile(position, plantReadyTile);
         }
     }
+
 }
