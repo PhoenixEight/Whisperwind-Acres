@@ -45,7 +45,8 @@ public class TileManager : MonoBehaviour
 
     public void SetInteracted(Vector3Int position)
     {
-        if(plantReady == true)
+        interactableMap.SetTile(position, interactedTile);
+       /* if(plantReady == true)
         {
             interactableMap.SetTile(position, plotTile);
             //plantCounter = 0;
@@ -55,6 +56,7 @@ public class TileManager : MonoBehaviour
         {
             interactableMap.SetTile(position, interactedTile);
         }
+        */
     }
 
 public void PluckPlant(Vector3Int position)
