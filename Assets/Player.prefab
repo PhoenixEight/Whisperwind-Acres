@@ -329,6 +329,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+  plantCounter: 0
+  plantReady: 1
 --- !u!114 &5308020531254588897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backpack:
     slots: []
-  backpackSlotCount: 0
+  backpackSlotCount: 21
   toolbar:
     slots: []
-  toolbarSlotCount: 0
+  toolbarSlotCount: 1
