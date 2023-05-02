@@ -151,6 +151,27 @@ public void CheckSeed()
         }
 }
 
+/*
+public void PluckPlantItem(Item item)
+{
+    foreach(Slot slot in slots)
+    {
+        
+        if(slot.IsEmpty)
+        {
+            slot.AddItem(item);
+        }
+        //one of these 2 might work
+        if(slot.itemName == "")
+        {
+            slot.Add(item);
+        }
+
+        
+    }
+    
+}
+*/
 
 
 }//end inventory.cs
