@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
 
     [Header("Backpack")]
     public Inventory backpack;
-    public int backpackSlotCount;//21
+    public int backpackSlotCount;//21 //switching to 9 now
 
     [Header("Toolbar")]
     public Inventory toolbar;
@@ -48,6 +48,15 @@ public class InventoryManager : MonoBehaviour
             inventoryByName[inventoryName].CheckSeed();
         }
     }
+    /*
+    public void PluckPlantItem(string inventoryName, Item item)
+    {
+        if(inventoryByName.ContainsKey(inventoryName))
+        {
+            inventoryByName[inventoryName].PluckPlantItem(item);
+        }
+    }
+    */
 
     public Inventory GetInventoryByName(string inventoryName)
     {

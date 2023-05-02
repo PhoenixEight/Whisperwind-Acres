@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
                 if(GameManager.instance.tileManager.IsPluckable(position))
                 { 
                         GameManager.instance.tileManager.PluckPlant(position);
+                        //inventory.Add("Backpack", "Common Scythe");
                         plantCounter = 0;
                 
                 }
