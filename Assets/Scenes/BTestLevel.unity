@@ -5223,6 +5223,10 @@ MonoBehaviour:
   interactableMap: {fileID: 864928138}
   hiddenInteractableTile: {fileID: 11400000, guid: 9d8f50a6115d736448bb5185753afc9e, type: 2}
   interactedTile: {fileID: 11400000, guid: ae6cf7d493cf0d44899126a1d8df2bd4, type: 2}
+  fullGrownTile: {fileID: 0}
+  plotTile: {fileID: 0}
+  plantCounter: {fileID: 0}
+  plantReady: {fileID: 0}
 --- !u!114 &920874116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23583,18 +23587,6 @@ PrefabInstance:
     - target: {fileID: 1038968755062688734, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1038968755062688735, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5308020531254588897, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
-      propertyPath: toolbarSlotCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5308020531254588897, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
-      propertyPath: backpackSlotCount
-      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
