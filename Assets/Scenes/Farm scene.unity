@@ -12713,11 +12713,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableMap: {fileID: 352820063}
-  Ground: {fileID: 49905584}
+  groundMap: {fileID: 49905584}
   hiddenInteractableTile: {fileID: 11400000, guid: 9d8f50a6115d736448bb5185753afc9e, type: 2}
   interactedTile: {fileID: 11400000, guid: cde4647f9916e914383d2c429457fc80, type: 2}
+  fullGrownTile: {fileID: 11400000, guid: f59a922eab393f040a77f782bfc56607, type: 2}
   plotTile: {fileID: 11400000, guid: 17a98c3409a2dd34c8650380a401c28d, type: 2}
-  plantReadyTile: {fileID: 11400000, guid: f59a922eab393f040a77f782bfc56607, type: 2}
 --- !u!114 &1190028909
 MonoBehaviour:
   m_ObjectHideFlags: 0

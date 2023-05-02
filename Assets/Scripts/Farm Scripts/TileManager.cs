@@ -5,14 +5,13 @@ using UnityEngine.Tilemaps;
 public class TileManager : MonoBehaviour
 {
     [SerializeField] private Tilemap interactableMap;
+    [SerializeField] private Tilemap groundMap;
 
     [SerializeField] private Tile hiddenInteractableTile;
     [SerializeField] private Tile interactedTile;
     [SerializeField] private Tile fullGrownTile;
     [SerializeField] private Tile plotTile;
 
-    public Player plantCounter;
-    public Player plantReady;
 
     void Start()
     {
@@ -43,29 +42,38 @@ public class TileManager : MonoBehaviour
         return false;
     }
 
-    public void SetInteracted(Vector3Int position)
+    public bool IsPluckable(Vector3Int position)
+    {
+        TileBase tile = groundMap.GetTile(position);
+
+        if(tile!= null)
+        {
+            if(tile.name == "plant_ready")
+            {
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    public void PlantSeed(Vector3Int position)
     {
         interactableMap.SetTile(position, interactedTile);
-       /* if(plantReady == true)
-        {
-            interactableMap.SetTile(position, plotTile);
-            //plantCounter = 0;
-        
-        }
-        else
-        {
-            interactableMap.SetTile(position, interactedTile);
-        }
-        */
+        //groundMap.SetTile(position, interactedTile)
     }
 
 public void PluckPlant(Vector3Int position)
     {
-        if(plantReady == true)
-        {
             interactableMap.SetTile(position, hiddenInteractableTile);
-            interactableMap.SetTile(position, plotTile);
+            groundMap.SetTile(position, plotTile);
             //plantCounter = 0;
-        }
+    }
+
+    public void SetPlantFullGrown(Vector3Int position)
+    {
+        interactableMap.SetTile(position, hiddenInteractableTile);
+        groundMap.SetTile(position, fullGrownTile);
+
     }
 }
