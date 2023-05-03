@@ -169,6 +169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 0
+  inventory:
+    slots: []
   itemIcon: {fileID: 2231702907287392761}
   quantityText: {fileID: 2231702907840190292}
 --- !u!114 &2557099614511503357

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Item))]
-public class Collectable : MonoBehaviour//, IDataPersistence
+public class ScytheItemScript : MonoBehaviour//, IDataPersistence
 {
 
     [SerializeField] private string id;
