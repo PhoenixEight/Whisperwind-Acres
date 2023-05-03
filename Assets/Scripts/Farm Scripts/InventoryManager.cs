@@ -57,6 +57,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
     */
+    
 
     public Inventory GetInventoryByName(string inventoryName)
     {

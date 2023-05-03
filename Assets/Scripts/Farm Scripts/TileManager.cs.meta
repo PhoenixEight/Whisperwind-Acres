@@ -3,7 +3,13 @@ guid: 59fa1cad2dca84d41b5c7b79648f4ff5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - interactableMap: {instanceID: 0}
+  - groundMap: {instanceID: 0}
+  - hiddenInteractableTile: {instanceID: 0}
+  - interactedTile: {fileID: 11400000, guid: 7a697f150e867a445998058f6ea1fb97, type: 2}
+  - fullGrownTile: {instanceID: 0}
+  - plotTile: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

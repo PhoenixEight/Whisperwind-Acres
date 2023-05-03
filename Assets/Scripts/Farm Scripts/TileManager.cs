@@ -65,6 +65,7 @@ public class TileManager : MonoBehaviour
 
 public void PluckPlant(Vector3Int position)
     {
+            
             interactableMap.SetTile(position, hiddenInteractableTile);
             groundMap.SetTile(position, plotTile);
             //plantCounter = 0;
@@ -72,8 +73,14 @@ public void PluckPlant(Vector3Int position)
 
     public void SetPlantFullGrown(Vector3Int position)
     {
-        interactableMap.SetTile(position, hiddenInteractableTile);
-        groundMap.SetTile(position, fullGrownTile);
+        TileBase tile = interactableMap.GetTile(position);
+
+            if(tile.name == "sprout_tile")
+            {
+                interactableMap.SetTile(position, hiddenInteractableTile);
+                groundMap.SetTile(position, fullGrownTile);
+            }
+        
 
     }
 }

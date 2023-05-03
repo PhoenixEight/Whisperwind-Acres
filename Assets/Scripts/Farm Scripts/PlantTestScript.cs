@@ -10,7 +10,7 @@ public class PlantTestScript : MonoBehaviour
 
         if(player)
         {
-                Player.plantCounter++;
+                Player.plantCounter+= 3;
 
                 Destroy(this.gameObject);
                 

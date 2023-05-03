@@ -162,16 +162,19 @@ public void PluckPlantItem(Item item)
             slot.AddItem(item);
         }
         //one of these 2 might work
+        
         if(slot.itemName == "")
         {
             slot.Add(item);
         }
+        
 
         
     }
     
 }
 */
+
 
 
 }//end inventory.cs
