@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
 
     public Transform target;
 
+    public float knockbackForce = 1f;
+
     public void Update()
     {
         target.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -28,11 +30,18 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        Collider2D collider = col.collider;
         IDamageable damageable = col.collider.GetComponent<IDamageable>();
 
         if(damageable != null)
         {
-            damageable.OnHit(damage);
+            Vector3 parentPosition = transform.position;
+
+            Vector2 direction = (Vector2) (collider.gameObject.transform.position - transform.position).normalized;
+
+            Vector2 knockback = direction * knockbackForce;
+
+            damageable.OnHit(damage, knockback);
         }
     }
 }

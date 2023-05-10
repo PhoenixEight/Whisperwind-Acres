@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 1038968755062688731}
   - component: {fileID: 1038968755062688711}
   - component: {fileID: 1038968755062688708}
-  - component: {fileID: 1038968755062688710}
   - component: {fileID: 1038968755062688735}
   - component: {fileID: 5308020531254588897}
   - component: {fileID: 4704039673291109056}
@@ -303,20 +302,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1038968755062688710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038968755062688732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9dbed9d0dc0d14a847dc8845d63396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 3
-  _targetable: 1
 --- !u!114 &1038968755062688735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   plantPosition: {x: 0, y: 0, z: 0}
+  commonScythe: {fileID: 0}
+  commonSeeds: {fileID: 0}
 --- !u!114 &5308020531254588897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,7 +348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9830759c89d67dc4785547229f01f77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectable: {fileID: 0}
-  target: {fileID: 0}
+  disableSimulation: 1
   _health: 10
   _targetable: 1

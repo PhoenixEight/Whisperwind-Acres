@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         if(canMove == true && moveInput != Vector2.zero)
         {
             rb.velocity = Vector2.ClampMagnitude(rb.velocity + (moveInput * moveSpeed * Time.deltaTime * moveMultiplier), maxSpeed * moveMultiplier);
+            //rb.AddForce(moveInput * moveSpeed * moveMultiplier * Time.deltaTime);
 
             if(moveInput.x > 0)
             {

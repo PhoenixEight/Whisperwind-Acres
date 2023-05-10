@@ -2502,6 +2502,68 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &518622516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 518622517}
+  - component: {fileID: 518622518}
+  - component: {fileID: 518622519}
+  m_Layer: 0
+  m_Name: DetectionZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &518622517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518622516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 624903990}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &518622518
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518622516}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
+--- !u!114 &518622519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518622516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d871a62d46641e441b89c0b7867f78e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectedObjs: []
 --- !u!1001 &529925345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3063,6 +3125,7 @@ GameObject:
   - component: {fileID: 624903987}
   - component: {fileID: 624903991}
   - component: {fileID: 624903992}
+  - component: {fileID: 624903993}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Enemy
@@ -3182,6 +3245,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 684704763}
+  - {fileID: 518622517}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3220,6 +3284,20 @@ MonoBehaviour:
   damage: 1
   collectable: {fileID: 3942088089103812680, guid: 072dec147766cd44287cb6a75988b009, type: 3}
   target: {fileID: 624903990}
+  knockbackForce: 1
+--- !u!114 &624903993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624903985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9830759c89d67dc4785547229f01f77b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableSimulation: 0
   _health: 10
   _targetable: 1
 --- !u!1 &684704762
@@ -5221,12 +5299,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableMap: {fileID: 864928138}
+  groundMap: {fileID: 0}
   hiddenInteractableTile: {fileID: 11400000, guid: 9d8f50a6115d736448bb5185753afc9e, type: 2}
   interactedTile: {fileID: 11400000, guid: ae6cf7d493cf0d44899126a1d8df2bd4, type: 2}
   fullGrownTile: {fileID: 0}
   plotTile: {fileID: 0}
-  plantCounter: {fileID: 0}
-  plantReady: {fileID: 0}
 --- !u!114 &920874116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6595,7 +6672,7 @@ TilemapRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.016129017, y: 0.016129017, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -18153,7 +18230,7 @@ TilemapRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.016129017, y: 0.016129017, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -22428,7 +22505,7 @@ TilemapRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.016129017, y: 0.016129017, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
