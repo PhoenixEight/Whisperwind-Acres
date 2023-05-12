@@ -1626,7 +1626,7 @@ GameObject:
   - component: {fileID: 252560492}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1763,7 +1763,7 @@ GameObject:
   - component: {fileID: 347982741}
   m_Layer: 0
   m_Name: Pixel Perfect Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2550,7 +2550,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 8
 --- !u!114 &518622519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2563,7 +2563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d871a62d46641e441b89c0b7867f78e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagTarget: Player
   detectedObjs: []
+  col: {fileID: 518622518}
 --- !u!1001 &529925345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3285,6 +3287,9 @@ MonoBehaviour:
   collectable: {fileID: 3942088089103812680, guid: 072dec147766cd44287cb6a75988b009, type: 3}
   target: {fileID: 624903990}
   knockbackForce: 1
+  moveSpeed: 140
+  maxSpeed: 15
+  detectionZone: {fileID: 518622519}
 --- !u!114 &624903993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3297,9 +3302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9830759c89d67dc4785547229f01f77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 7626026115629159355, guid: 6e037ee003d39d64fac0bb78fdc3fcf9, type: 3}
   disableSimulation: 0
-  _health: 10
-  _targetable: 1
+  isInvincibleEnabled: 0
+  invincibilityTime: 0.25
+  _invincible: 0
 --- !u!1 &684704762
 GameObject:
   m_ObjectHideFlags: 0

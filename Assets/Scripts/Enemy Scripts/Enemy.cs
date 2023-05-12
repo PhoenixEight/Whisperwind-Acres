@@ -15,6 +15,30 @@ public class Enemy : MonoBehaviour
 
     public float knockbackForce = 1f;
 
+    public float moveSpeed = 1f;
+
+    public float maxSpeed = 1f;
+
+    public DetectionZone detectionZone;
+    Rigidbody2D rb;
+
+    DamageableCharacter damageableCharacter;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        damageableCharacter = GetComponent<DamageableCharacter>();
+    }
+
+    void FixedUpdate()
+    {
+        if(damageableCharacter.Targetable && detectionZone.detectedObjs.Count > 0)
+        {
+            Vector2 direction = (detectionZone.detectedObjs[0].transform.position - transform.position).normalized;
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (direction * moveSpeed * Time.deltaTime), maxSpeed);
+        }
+    }
+
     public void Update()
     {
         target.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
