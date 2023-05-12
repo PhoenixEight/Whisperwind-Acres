@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class DamageableCharacter : MonoBehaviour, IDamageable
 {
+    public bool disableSimulation = false;
     Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
@@ -36,7 +37,11 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     set {
         _targetable = value;
 
-        //rb.simulated = value;
+        if(disableSimulation)
+        {
+            rb.simulated = false;
+        }
+
         physicsCollider.enabled = value;
     } }
 
