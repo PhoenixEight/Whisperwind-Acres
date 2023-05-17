@@ -13,6 +13,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     Rigidbody2D rb;
     Collider2D physicsCollider;
 
+    public bool isLiving = true;
     bool isAlive = true;
     private float invincibleTimeElapsed = 0f;
     public float Health{
@@ -34,6 +35,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             {
                 Defeated();
                 Targetable = false;
+                isLiving = false;
             }
         }
         get{
