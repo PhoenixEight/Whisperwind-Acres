@@ -284,7 +284,7 @@ CapsuleCollider2D:
   m_Direction: 1
 --- !u!95 &1038968755062688708
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -301,7 +301,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &1038968755062688735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,4 +352,7 @@ MonoBehaviour:
   disableSimulation: 1
   isInvincibleEnabled: 1
   invincibilityTime: 1
+  isLiving: 1
   _invincible: 0
+  collectable: {fileID: 3942088089103812680, guid: 072dec147766cd44287cb6a75988b009, type: 3}
+  target: {fileID: 1038968755062688734}

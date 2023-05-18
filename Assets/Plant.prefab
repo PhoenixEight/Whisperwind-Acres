@@ -171,13 +171,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  collectable: {fileID: 3942088089103812680, guid: 072dec147766cd44287cb6a75988b009, type: 3}
-  target: {fileID: 3447402201505008074}
   knockbackForce: 1
   moveSpeed: 140
   maxSpeed: 15
   detectionZone: {fileID: 3447402202422690763}
-  isNotDead: 0
 --- !u!114 &3447402201505008069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +193,8 @@ MonoBehaviour:
   invincibilityTime: 0.25
   isLiving: 1
   _invincible: 0
+  collectable: {fileID: 3942088089103812680, guid: 072dec147766cd44287cb6a75988b009, type: 3}
+  target: {fileID: 3447402201505008074}
 --- !u!1 &3447402201719999750
 GameObject:
   m_ObjectHideFlags: 0

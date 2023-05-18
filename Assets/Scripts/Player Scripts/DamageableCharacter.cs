@@ -110,6 +110,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     public void Defeated()
     {
         animator.SetBool("isAlive", false);
+        DropItem();
     }
 
     public void RemoveEnemy()
@@ -130,5 +131,29 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         {
             Invincible = false;
         }
+    }
+
+    //Item Dropping Stuff v
+
+    
+    const float m_dropChance = 1f / 6f;  // Set odds (1/X)
+
+    public GameObject collectable;
+
+    public Transform target;
+
+    public void Update()
+    {
+        target.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
+
+    public void DropItem()
+    {
+        if(Random.Range(0f, 1f) <= m_dropChance && gameObject.tag == "Enemy")
+        {
+            Instantiate(collectable, target.position, transform.rotation);
+            Debug.Log("Item Dropped");
+        }
+        Debug.Log("Item Not Dropped");
     }
 }
