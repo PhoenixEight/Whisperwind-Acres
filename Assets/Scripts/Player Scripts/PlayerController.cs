@@ -82,12 +82,27 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         moveInput = value.Get<Vector2>();
     }
 
+    void Update()
+    {
+        if(isMoving == false)
+        {
+            isSprinting = false;
+            animator.SetBool("isSprinting", false);
+        }
+    }
+
     void OnSprint()
     {
         if(isMoving == true)
         {
             isSprinting = true;
             animator.SetBool("isSprinting", true);
+        }
+
+        if(isMoving == false)
+        {
+            isSprinting = false;
+            animator.SetBool("isSprinting", false);
         }
 
         moveMultiplier = 3;
@@ -98,6 +113,12 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         isSprinting = false;
         moveMultiplier = 1;
         animator.SetBool("isSprinting", false);
+
+        if(isMoving == false)
+        {
+            isSprinting = false;
+            animator.SetBool("isSprinting", false);
+        }
     }
 
     void UpdateAnimatorParameters()
