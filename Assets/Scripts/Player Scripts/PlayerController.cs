@@ -55,16 +55,23 @@ public class PlayerController : MonoBehaviour, IDataPersistence
             if(isSprinting == true)
             {
                 isWalking = false;
+                animator.SetBool("isWalking", false);
             }
             else isWalking = true;
+            animator.SetBool("isWalking", true);
 
             isMoving = true;
+            animator.SetBool("isMoving", true);
         }
         else
         {
             //rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
 
+            isWalking = false;
+            animator.SetBool("isWalking", false);
+
             isMoving = false;
+            animator.SetBool("isMoving", false);
         }
 
         UpdateAnimatorParameters();
@@ -77,7 +84,12 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     void OnSprint()
     {
-        isSprinting = true;
+        if(isMoving == true)
+        {
+            isSprinting = true;
+            animator.SetBool("isSprinting", true);
+        }
+
         moveMultiplier = 3;
     }
 
@@ -85,6 +97,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     {
         isSprinting = false;
         moveMultiplier = 1;
+        animator.SetBool("isSprinting", false);
     }
 
     void UpdateAnimatorParameters()

@@ -5,18 +5,27 @@ using UnityEngine.UI;
 
 public class DamageableCharacter : MonoBehaviour, IDamageable
 {
+    public GameObject healthText;
     public bool disableSimulation = false;
+    public bool isInvincibleEnabled = false;
+    public float invincibilityTime = 0.25f;
     Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
 
+    public bool isLiving = true;
     bool isAlive = true;
-
+    private float invincibleTimeElapsed = 0f;
     public float Health{
         set{
             if(value < _health)
             {
                 animator.SetTrigger("damaged");
+                RectTransform textTransform = (RectTransform) Instantiate(healthText).GetComponent<RectTransform>();
+                textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+
+                Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+                textTransform.SetParent(canvas.transform);
             }
 
             _health = value;
@@ -26,6 +35,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             {
                 Defeated();
                 Targetable = false;
+                isLiving = false;
             }
         }
         get{
@@ -45,8 +55,20 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         physicsCollider.enabled = value;
     } }
 
-    public float _health = 10;
-    public bool _targetable = true;
+    public bool Invincible { get { return _invincible; }
+    set {
+        _invincible = value;
+
+        if(Invincible == true)
+        {
+            invincibleTimeElapsed = 0f;
+        }
+    } }
+
+    float _health = 10;
+    bool _targetable = true;
+
+    public bool _invincible = false;
 
     public void Start()
     {
@@ -59,22 +81,36 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
     public void OnHit(float damage, Vector2 knockback)
     {
-        //Debug.Log("Plant hit for " + damage);
-        Health -= damage;
+        if(!Invincible)
+        {
+            Health -= damage;
+            rb.AddForce(knockback);
+            //Debug.Log("Force: " + knockback);
 
-        rb.AddForce(knockback);
-        //Debug.Log("Force: " + knockback);
+            if(isInvincibleEnabled)
+            {
+                Invincible = true;
+            }
+        }
     }
 
     public void OnHit(float damage)
     {
-        //Debug.Log("Plant hit for " + damage);
-        Health -= damage;
+        if(!Invincible)
+        {
+            Health -= damage;
+
+            if(isInvincibleEnabled)
+            {
+                Invincible = true;
+            }
+        }
     }
 
     public void Defeated()
     {
         animator.SetBool("isAlive", false);
+        DropItem();
     }
 
     public void RemoveEnemy()
@@ -87,8 +123,37 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    public void FixedUpdate()
     {
-        
+        invincibleTimeElapsed += Time.deltaTime;
+
+        if(invincibleTimeElapsed > invincibilityTime)
+        {
+            Invincible = false;
+        }
+    }
+
+    //Item Dropping Stuff v
+
+    
+    const float m_dropChance = 1f / 6f;  // Set odds (1/X)
+
+    public GameObject collectable;
+
+    public Transform target;
+
+    public void Update()
+    {
+        target.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
+
+    public void DropItem()
+    {
+        if(Random.Range(0f, 1f) <= m_dropChance && gameObject.tag == "Enemy")
+        {
+            Instantiate(collectable, target.position, transform.rotation);
+            Debug.Log("Item Dropped");
+        }
+        Debug.Log("Item Not Dropped");
     }
 }

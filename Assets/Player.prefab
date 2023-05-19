@@ -59,10 +59,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.7, y: 0}
-      - {x: 0.4, y: 1}
-      - {x: -0.6, y: 0}
-      - {x: 0.4, y: -1}
+    - - {x: 0.4, y: -0.2}
+      - {x: 0, y: 0.2}
+      - {x: -0.75, y: -0.4}
+      - {x: 0, y: -1}
 --- !u!114 &1038968754983398349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   knockbackForce: 2
   scytheCollider: {fileID: 1038968754983398338}
   faceRight: {x: 1, y: 0, z: 0}
-  faceLeft: {x: -1, y: 0, z: 0}
+  faceLeft: {x: -1.75, y: 0, z: 0}
 --- !u!114 &1038968754983398348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ CapsuleCollider2D:
   m_Direction: 1
 --- !u!95 &1038968755062688708
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -301,7 +301,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &1038968755062688735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +348,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9830759c89d67dc4785547229f01f77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 7626026115629159355, guid: 6e037ee003d39d64fac0bb78fdc3fcf9, type: 3}
   disableSimulation: 1
-  _health: 10
-  _targetable: 1
+  isInvincibleEnabled: 1
+  invincibilityTime: 1
+  isLiving: 1
+  _invincible: 0
+  collectable: {fileID: 3942088089103812680, guid: 072dec147766cd44287cb6a75988b009, type: 3}
+  target: {fileID: 1038968755062688734}

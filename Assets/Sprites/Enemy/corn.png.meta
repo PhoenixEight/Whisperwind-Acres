@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cd66317b4b31096409ea8bd7f2353f67
+guid: e3e45c25107df3c49b6861a2b95ebfa8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,92 +101,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerAttack_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 112
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d93e3ba9b69452c47a9ff401087b4a89
-      internalID: -301960727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerAttack_1
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 80
-        width: 112
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 28fb66720b52f0a45a501117dbd03e98
-      internalID: -985647642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerAttack_2
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 80
-        width: 112
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c29c3e035033de6469596bb91cfc30b7
-      internalID: -2145029098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerAttack_3
+      name: corn_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 112
-        height: 80
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5b1bef4a838cab418055156c6089b49
-      internalID: 2037805372
+      spriteID: d67044e677f850345a2fdf12b9d0ffb5
+      internalID: 891798524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerAttack_4
+      name: corn_1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 32
         y: 0
-        width: 112
-        height: 80
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cecf8feefa156f40a7aac4cb75e668d
-      internalID: -491849547
+      spriteID: 8f817a32b8c04b24682c106398a1a5cb
+      internalID: -767850956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerAttack_5
+      name: corn_2
       rect:
         serializedVersion: 2
-        x: 224
+        x: 64
         y: 0
-        width: 112
-        height: 80
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +161,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 649a98b5f2e304b45854fdc2d34db70e
-      internalID: 1616234293
+      spriteID: 1c76738c39e72104ba120aadeb315ae1
+      internalID: 1022525239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corn_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 286a3b6faeb84ef46b3b2b85853178bc
+      internalID: 735975446
       vertices: []
       indices: 
       edges: []
@@ -253,12 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerAttack_3: 2037805372
-      PlayerAttack_0: -301960727
-      PlayerAttack_2: -2145029098
-      PlayerAttack_5: 1616234293
-      PlayerAttack_4: -491849547
-      PlayerAttack_1: -985647642
+      corn_0: 891798524
+      corn_1: -767850956
+      corn_2: 1022525239
+      corn_3: 735975446
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
