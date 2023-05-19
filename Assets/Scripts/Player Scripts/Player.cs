@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
     public Item commonScythe = GameManager.instance.itemManager.GetItemByName("Common Scythe");
     public Item uncommonScythe = GameManager.instance.itemManager.GetItemByName("Uncommon Scythe");
     public Item rareScythe = GameManager.instance.itemManager.GetItemByName("Rare Scythe");
-
-    float CommonSeedChances = Random.Range(1.0f, 100.0f);
+    float CommonSeedChances = 0.0f;
+    
 
 
     public static int plantCounter = 0;
