@@ -656,6 +656,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1038968755062688735, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
+      propertyPath: rareScythe
+      value: 
+      objectReference: {fileID: 7318805209375496345, guid: a80fb3feee81d6140a4ec3b5589c351a, type: 3}
+    - target: {fileID: 1038968755062688735, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
+      propertyPath: commonScythe
+      value: 
+      objectReference: {fileID: 7318805209375496345, guid: 11a43d81d0f6ec24490a3b7f3ceebffb, type: 3}
+    - target: {fileID: 1038968755062688735, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
+      propertyPath: uncommonScythe
+      value: 
+      objectReference: {fileID: 7318805209375496345, guid: 6a41f159d5a694a41ac625a2ec53da0a, type: 3}
     - target: {fileID: 5308020531254588897, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
       propertyPath: toolbarSlotCount
       value: 1
@@ -50503,6 +50515,8 @@ MonoBehaviour:
   items:
   - {fileID: 2534270276797616057, guid: 072dec147766cd44287cb6a75988b009, type: 3}
   - {fileID: 7318805209375496345, guid: 11a43d81d0f6ec24490a3b7f3ceebffb, type: 3}
+  - {fileID: 7318805209375496345, guid: 6a41f159d5a694a41ac625a2ec53da0a, type: 3}
+  - {fileID: 7318805209375496345, guid: a80fb3feee81d6140a4ec3b5589c351a, type: 3}
 --- !u!114 &1369531175
 MonoBehaviour:
   m_ObjectHideFlags: 0

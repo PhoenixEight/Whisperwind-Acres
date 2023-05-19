@@ -62,13 +62,19 @@ public class UI_Manager : MonoBehaviour
         if(!chestPanel.activeSelf)
         {
             chestPanel.SetActive(true);
+            inventoryPanel.SetActive(true);
+            toolbarPanel.SetActive(true);
+            RefreshInventoryUI("Backpack");
+            //added by me to refresh the toolbar:
+            RefreshInventoryUI("Toolbar");
             RefreshInventoryUI("Chest");
+            
         }
         else{
+            inventoryPanel.SetActive(false);
+            toolbarPanel.SetActive(false);
             chestPanel.SetActive(false);
         }
-        
-
     }
 
     
