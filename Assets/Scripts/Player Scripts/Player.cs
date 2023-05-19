@@ -10,12 +10,14 @@ public class Player : MonoBehaviour
     public Vector3Int plantPosition;
 
     public Item commonScythe = GameManager.instance.itemManager.GetItemByName("Common Scythe");
-    public Item commonSeeds = GameManager.instance.itemManager.GetItemByName("Common Seeds");
+    public Item uncommonScythe = GameManager.instance.itemManager.GetItemByName("Uncommon Scythe");
+    public Item rareScythe = GameManager.instance.itemManager.GetItemByName("Rare Scythe");
 
     float CommonSeedChances = Random.Range(1.0f, 100.0f);
 
 
     public static int plantCounter = 0;
+    /*
     public static int plantCounter1 = 0;
     public static int plantCounter2 = 0;
     public static int plantCounter3 = 0;
@@ -24,11 +26,12 @@ public class Player : MonoBehaviour
     public static int plantCounter6 = 0;
     public static int plantCounter7 = 0;
     public static int plantCounter8 = 0;
-
+    */
     //public static bool plantReady = true;
 
     private void Awake(){
         inventory = GetComponent<InventoryManager>();
+      
         
     }
 
@@ -79,13 +82,17 @@ public class Player : MonoBehaviour
                         GameManager.instance.tileManager.PluckPlant(position);
                         float CommonSeedChances = Random.Range(1.0f, 100.0f);
                         Debug.Log("This is the CommonSeedChances: " + CommonSeedChances);
-                        if(CommonSeedChances < 85.0f)
+                        if(CommonSeedChances > 90.0f)
                         {
-                            inventory.Add("Backpack", commonScythe);
+                            
+                            inventory.Add("Backpack", rareScythe);
                         }
-                        else
+                        else if(CommonSeedChances > 60.0f )
                         {
-                            inventory.Add("Backpack", commonSeeds);
+                            inventory.Add("Backpack", uncommonScythe);
+                        }
+                        else{
+                            inventory.Add("Backpack", commonScythe);
                         }
                         plantCounter = 0;
                 

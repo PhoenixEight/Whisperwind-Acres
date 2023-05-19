@@ -167,6 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8717fcb8f1d3940a31a2c7e6a951e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotID: 0
+  inventory:
+    slots: []
   itemIcon: {fileID: 2231702907287392761}
   quantityText: {fileID: 2231702907840190292}
 --- !u!1 &2231702907840190282
@@ -244,8 +247,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 0
+  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

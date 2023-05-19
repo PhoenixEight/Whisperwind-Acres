@@ -9,6 +9,7 @@ public class UI_Manager : MonoBehaviour
 
     public GameObject inventoryPanel;
     public GameObject toolbarPanel;
+    public GameObject chestPanel;
 
     public List<Inventory_UI> inventoryUIs;
 
@@ -42,18 +43,35 @@ public class UI_Manager : MonoBehaviour
         if(!inventoryPanel.activeSelf){
             inventoryPanel.SetActive(true);
             toolbarPanel.SetActive(true);
+            //chestPanel.SetActive(true);
             RefreshInventoryUI("Backpack");
             //added by me to refresh the toolbar:
             RefreshInventoryUI("Toolbar");
+            RefreshInventoryUI("Chest");
 
         }
         else{
             inventoryPanel.SetActive(false);
             toolbarPanel.SetActive(false);
+            chestPanel.SetActive(false);
             
         }
     }
+    
+    public void OpenChest(){
+        if(!chestPanel.activeSelf)
+        {
+            chestPanel.SetActive(true);
+            RefreshInventoryUI("Chest");
+        }
+        else{
+            chestPanel.SetActive(false);
+        }
+        
 
+    }
+
+    
     public void RefreshInventoryUI(string inventoryName)
     {
         if(inventoryUIByName.ContainsKey(inventoryName))
