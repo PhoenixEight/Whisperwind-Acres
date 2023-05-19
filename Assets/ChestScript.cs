@@ -25,9 +25,9 @@ public class ChestScript : MonoBehaviour
             Debug.Log("Player near chest");
             if(Input.GetKeyDown(KeyCode.E))
             {
-                //ui.OpenChest();
+                ui.OpenChest();
                 
-                
+                /*
                 if(!chestPanel.activeSelf)
                 {
                 
@@ -44,10 +44,14 @@ public class ChestScript : MonoBehaviour
                 }
                 else
                 {
+                    
                     chestPanel.SetActive(false);
                     toolslotPanel.SetActive(false);
                     inventoryPanel.SetActive(false);
+                    
+                    ui.ToggleInventoryUI();
                 }
+                */
                 
                 
             }
