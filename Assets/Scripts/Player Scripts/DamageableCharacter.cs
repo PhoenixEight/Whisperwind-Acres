@@ -65,7 +65,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         }
     } }
 
-    float _health = 10;
+    public float _health = 10;
     bool _targetable = true;
 
     public bool _invincible = false;
@@ -77,6 +77,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
         rb = GetComponent<Rigidbody2D>();
         physicsCollider = GetComponent<Collider2D>();
+
+
     }
 
     public void OnHit(float damage, Vector2 knockback)
@@ -133,6 +135,10 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         }
     }
 
+    //Player Health Stuff v
+
+    public HealthBar healthBar;
+
     //Item Dropping Stuff v
 
     
@@ -145,6 +151,9 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     public void Update()
     {
         target.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        
+        int currentHealth = (int) _health;
+        healthBar.SetHealth(currentHealth);
     }
 
     public void DropItem()

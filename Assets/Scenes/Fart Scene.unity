@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &58803224
 Transform:
   m_ObjectHideFlags: 0
@@ -618,11 +618,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1038968755062688734, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22
+      value: -11.000221
       objectReference: {fileID: 0}
     - target: {fileID: 1038968755062688734, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 5.50011
       objectReference: {fileID: 0}
     - target: {fileID: 1038968755062688734, guid: 9fd4b7c963008374e8478b857f907370, type: 3}
       propertyPath: m_LocalPosition.z
@@ -828,7 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e70ed0c20cea94b8c6dd3fae2ad960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level_Name: BTestLevel
+  Level_Name: Level1
 --- !u!19719996 &288901431
 TilemapCollider2D:
   m_ObjectHideFlags: 0
