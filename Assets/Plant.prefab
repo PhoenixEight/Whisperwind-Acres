@@ -148,6 +148,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3447402201505008068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +184,9 @@ MonoBehaviour:
   isInvincibleEnabled: 0
   invincibilityTime: 0.25
   isLiving: 1
+  _health: 12
   _invincible: 0
+  healthBar: {fileID: 0}
   collectable: {fileID: 3942088089103812680, guid: 072dec147766cd44287cb6a75988b009, type: 3}
   target: {fileID: 3447402201505008074}
 --- !u!1 &3447402201719999750
