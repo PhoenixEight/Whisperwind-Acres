@@ -320,9 +320,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   plantPosition: {x: 0, y: 0, z: 0}
-  commonScythe: {fileID: 0}
-  uncommonScythe: {fileID: 0}
-  rareScythe: {fileID: 0}
+  commonScythe: {fileID: 7318805209375496345, guid: 11a43d81d0f6ec24490a3b7f3ceebffb, type: 3}
+  uncommonScythe: {fileID: 7318805209375496345, guid: 6a41f159d5a694a41ac625a2ec53da0a, type: 3}
+  rareScythe: {fileID: 7318805209375496345, guid: a80fb3feee81d6140a4ec3b5589c351a, type: 3}
 --- !u!114 &5308020531254588897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backpack:
     slots: []
-  backpackSlotCount: 21
+  backpackSlotCount: 9
   toolbar:
     slots: []
   toolbarSlotCount: 1
