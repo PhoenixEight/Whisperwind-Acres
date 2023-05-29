@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
 
     public DetectionZone detectionZone;
     Rigidbody2D rb;
-    Animator animator;
+    public Animator animator;
 
     DamageableCharacter damageableCharacter;
 
@@ -66,6 +66,8 @@ public class Enemy : MonoBehaviour
         {
             if(damageable != null)
             {
+                animator.SetBool("isMoving", true);
+
                 Vector3 parentPosition = transform.position;
 
                 Vector2 direction = (Vector2) (collider.gameObject.transform.position - transform.position).normalized;
@@ -77,10 +79,21 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void OnCollisionExit2D(Collision2D col)
+    {
+        Collider2D collider = col.collider;
+        IDamageable damageable = col.collider.GetComponent<IDamageable>();
+
+        if(collider.gameObject.tag == "Player")
+        {
+            animator.SetBool("isMoving", false);
+        }
+    }
+
     //Set this to the transform you want to check
     public Transform objectTransfom;
  
-    private float noMovementThreshold = 0.0001f;
+    private float noMovementThreshold = 0.000001f;
     private const int noMovementFrames = 3;
     Vector3[] previousLocations = new Vector3[noMovementFrames];
     private bool isMoving;
@@ -118,12 +131,12 @@ public class Enemy : MonoBehaviour
             {
                 //The minimum movement has been detected between frames
                 isMoving = true;
-                animator.SetBool("isMoving", true);
+                //animator.SetBool("isMoving", true);
                 break;
-        }
+            }
             else
             {
-                animator.SetBool("isMoving", false);
+                //animator.SetBool("isMoving", false);
                 isMoving = false;
             }
         }

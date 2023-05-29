@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 66aec0a63b942e74ea27066d0d170802
+guid: 36819214f4be8ed4b9e59b6a1ea25455
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,29 +101,143 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerIdle_0
+      name: PeapodAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9152bec68ca103844a361e8eedf190c9
+      internalID: -1808076937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PeapodAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef19d4d403ed774bbf178e978b50bf3
+      internalID: -2085019157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PeapodAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073d9ca23d5c2ce458547b37794b2e09
+      internalID: -1945919859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PeapodAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9409f42ab2adc1543b27421c1b6fcfb0
+      internalID: -1441418368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PeapodAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b19cb2502e1374c82d024f909643c6
+      internalID: -2092092690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PeapodAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a707d8ebae453641bb33a47a613e382
+      internalID: -1222187856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PeapodAnimation_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 67
-        height: 60
+        width: 64
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f152ee978c798f74387a0c83739b15ed
-      internalID: 2127282267
+      spriteID: 2dfc5d773e8d02b4bb2150ded67c798a
+      internalID: 84464731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerIdle_1
+      name: PeapodAnimation_7
       rect:
         serializedVersion: 2
-        x: 67
+        x: 64
         y: 0
-        width: 67
-        height: 60
+        width: 64
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,134 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccc794c78cd9d034ba7af09a7b6c38b8
-      internalID: 216310612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_2
-      rect:
-        serializedVersion: 2
-        x: 134
-        y: 0
-        width: 67
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e8a985cc2b5bdc4dbb950a63e8e5e1b
-      internalID: -1839593534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_3
-      rect:
-        serializedVersion: 2
-        x: 201
-        y: 0
-        width: 67
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 441316e86fb48c6448e3b32a91e55c40
-      internalID: -1851280225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_4
-      rect:
-        serializedVersion: 2
-        x: 268
-        y: 0
-        width: 67
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e9e819e0ef7b7c4bab0546646b70e52
-      internalID: 149865782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_5
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 0
-        width: 67
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67e0b5da14983fd4aa9fdafde1060d24
-      internalID: 1949613403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_6
-      rect:
-        serializedVersion: 2
-        x: 402
-        y: 0
-        width: 67
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 232dba4738fbbbd46a4b6da394c1fd07
-      internalID: -125234690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerIdle_7
-      rect:
-        serializedVersion: 2
-        x: 469
-        y: 0
-        width: 67
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 016401d1c6ce2c0448b25fded25d5056
-      internalID: 1979602757
+      spriteID: 78fdf6e49d9794e42b76b0e1ab911708
+      internalID: -371046734
       vertices: []
       indices: 
       edges: []
@@ -295,14 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerIdle_0: 2127282267
-      PlayerIdle_1: 216310612
-      PlayerIdle_2: -1839593534
-      PlayerIdle_3: -1851280225
-      PlayerIdle_4: 149865782
-      PlayerIdle_5: 1949613403
-      PlayerIdle_6: -125234690
-      PlayerIdle_7: 1979602757
+      PeapodAnimation_0: -1808076937
+      PeapodAnimation_1: -2085019157
+      PeapodAnimation_2: -1945919859
+      PeapodAnimation_3: -1441418368
+      PeapodAnimation_4: -2092092690
+      PeapodAnimation_5: -1222187856
+      PeapodAnimation_6: 84464731
+      PeapodAnimation_7: -371046734
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
