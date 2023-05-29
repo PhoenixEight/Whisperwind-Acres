@@ -62,15 +62,18 @@ public class Enemy : MonoBehaviour
         Collider2D collider = col.collider;
         IDamageable damageable = col.collider.GetComponent<IDamageable>();
 
-        if(damageable != null)
+        if(collider.gameObject.tag == "Player")
         {
-            Vector3 parentPosition = transform.position;
+            if(damageable != null)
+            {
+                Vector3 parentPosition = transform.position;
 
-            Vector2 direction = (Vector2) (collider.gameObject.transform.position - transform.position).normalized;
+                Vector2 direction = (Vector2) (collider.gameObject.transform.position - transform.position).normalized;
 
-            Vector2 knockback = direction * knockbackForce;
+                Vector2 knockback = direction * knockbackForce;
 
-            damageable.OnHit(damage, knockback);
+                damageable.OnHit(damage, knockback);
+            }
         }
     }
 

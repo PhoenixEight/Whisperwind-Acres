@@ -142,7 +142,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     //Item Dropping Stuff v
 
     
-    const float m_dropChance = 1f / 6f;  // Set odds (1/X)
+    const float m_dropChance = 1f / 3f;  // Set odds (1/X)
 
     public GameObject collectable;
 

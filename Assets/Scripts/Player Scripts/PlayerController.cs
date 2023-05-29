@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     bool isSprinting = false;
     bool canMove = true;
 
+    public float offsetX = 0f;
+    public float offsetY = 0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -159,6 +162,27 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     public void UnlockMovement()
     {
         canMove = true;
+    }
+
+
+    public void MoveRight()
+    {
+        transform.Translate(offsetX,0,0);
+    }
+
+    public void MoveLeft()
+    {
+        transform.Translate(offsetX * -1,0,0);
+    }
+
+    public void MoveUp()
+    {
+        transform.Translate(0,offsetY,0);
+    }
+
+    public void MoveDown()
+    {
+        transform.Translate(0,offsetY * -1,0);
     }
 
     //Conner save/load system stuff for saving player position!!:

@@ -5,25 +5,38 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public Transform player;
-    public float smoothing = 5f;
-
-    private Vector3 offset;
 
     public float multiplier = 0.1f;
 
-    void Start()
-    {
-        offset = transform.position - player.position;
-    }
+    private float offsetX = 0f;
+    private float offsetY = 0f;
+
+    public float offsetXChange = 0f;
+    public float offsetYChange = 0f;
 
     void FixedUpdate()
     {
-        transform.position = new Vector3(player.transform.position.x * multiplier, player.transform.position.y * multiplier + 1, 0);
+        transform.position = new Vector3(offsetX + player.transform.position.x * multiplier, offsetY + player.transform.position.y * multiplier + 1, 0);
     }
 
-    /*void FixedUpdate()
+
+    public void MoveRight()
     {
-        Vector3 targetCamPos = player.position + offset;
-        transform.position.x = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
-    }*/
+        offsetX = offsetX + offsetXChange;
+    }
+
+    public void MoveLeft()
+    {
+        offsetX = offsetX - offsetXChange;
+    }
+
+    public void MoveUp()
+    {
+        offsetY = offsetY + offsetYChange;
+    }
+
+    public void MoveDown()
+    {
+        offsetY = offsetY - offsetYChange;
+    }
 }
