@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
 
     public Vector3Int plantPosition;
 
+    public GameObject plantGlow;
+
+
     public Item commonScythe = GameManager.instance.itemManager.GetItemByName("Common Scythe");
     public Item uncommonScythe = GameManager.instance.itemManager.GetItemByName("Uncommon Scythe");
     public Item rareScythe = GameManager.instance.itemManager.GetItemByName("Rare Scythe");
@@ -64,15 +67,19 @@ public class Player : MonoBehaviour
     {
         if(plantCounter == 3)
         {
+            if(plantPosition == plantPosition){
             GameManager.instance.tileManager.SetPlantFullGrown(plantPosition);
+            //Instantiate(plantGlow, plantPosition, Quaternion.identity);
             //plantReady = true;
+            }
             
         }
-        
+       
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Vector3Int position = new Vector3Int((int)transform.position.x,(int)transform.position.y, 0);
+            Debug.Log("Your position is: " + position);
             
             //original
             if(GameManager.instance.tileManager.IsInteractable(position))
