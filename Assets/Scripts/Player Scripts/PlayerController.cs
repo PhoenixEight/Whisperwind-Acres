@@ -89,8 +89,14 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     {
         if(isMoving == false)
         {
+            GetComponent<AudioSource>().Pause();
             isSprinting = false;
             animator.SetBool("isSprinting", false);
+        }
+
+        if(isWalking == true)
+        {
+            GetComponent<AudioSource>().UnPause();
         }
     }
 
