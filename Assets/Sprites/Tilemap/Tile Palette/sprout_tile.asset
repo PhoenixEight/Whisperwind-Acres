@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: tilemapSCH1L_102
+  m_Name: sprout_tile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1648316660, guid: 0b691075761b7eb4ea599b63b07cd92c, type: 3}
+  m_Sprite: {fileID: -292411433, guid: 0b691075761b7eb4ea599b63b07cd92c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
