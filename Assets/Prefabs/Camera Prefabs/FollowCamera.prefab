@@ -47,4 +47,4 @@ MonoBehaviour:
   player: {fileID: 0}
   multiplier: 0.25
   offsetXChange: 50
-  offsetYChange: 50
+  offsetYChange: 20
